@@ -102,13 +102,13 @@ set footer_classes = ' ' ~
   %}
 
   {%
-  set content_classes = (render_sidebar_first|trim|length > 0 and render_sidebar_second|trim|length > 0) ? 'col-12 col-lg-6' : ((render_sidebar_first|trim|length > 0 or render_sidebar_second|trim|length > 0) ? 'col-12 col-lg-9' : 'col-12' )
+  set content_classes = (render_sidebar_first|striptags|trim|length > 0 and render_sidebar_second|striptags|trim|length > 0) ? 'col-12 col-lg-6' : ((render_sidebar_first|striptags|trim|length > 0 or render_sidebar_second|striptags|trim|length > 0) ? 'col-12 col-lg-9' : 'col-12' )
    %}
 
   <div class="{{ b4_top_container }}">
     <div class="mt-5 pt-5 nav-spacer"></div>
 
-    {% if render_help_centre and render_help_centre|trim|length > 0  %}
+    {% if render_help_centre and render_help_centre|striptags|trim|length > 0  %}
       <div class="row">
         <div class="col col-12 border-bottom border-1">
           {{ render_help_centre }}
@@ -124,7 +124,7 @@ set footer_classes = ' ' ~
 
     <div class="row">
 
-      {% if render_sidebar_first and render_sidebar_first|trim|length > 0 %}
+      {% if render_sidebar_first and render_sidebar_first|striptags|trim|length > 0 %}
         <div class="order-2 order-lg-1 col {{ sidebar_first_classes }}">
           {{ render_sidebar_first }}
         </div>
@@ -142,7 +142,7 @@ set footer_classes = ' ' ~
         {{ page.content }}
       </div>
 
-      {% if render_sidebar_second and render_sidebar_second|trim|length > 0 %}
+      {% if render_sidebar_second and render_sidebar_second|striptags|trim|length > 0 %}
         <div class="order-3 border-left border-4 col {{ sidebar_second_classes }}">
           {{ render_sidebar_second }}
         </div>
