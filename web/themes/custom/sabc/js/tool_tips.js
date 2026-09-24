@@ -26,7 +26,7 @@
 			  data: v,
 			  url: '/ajax/tool-tips'
 			}).done(function( data ) {
-				console.log(data);
+				//console.log(data);
 
 				//MAKE SURE WE HAVE DATA BACK
 				if(data != false){
