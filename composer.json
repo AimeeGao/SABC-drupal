@@ -42,7 +42,6 @@
         "drupal/twig_tweak": "^3.4",
         "drupal/views_taxonomy_term_name_depth": "^7.2",
         "drupal/views_taxonomy_term_name_into_id": "^1.0@RC",
-        "drupal/webprofiler": "^11.2",
         "drupal/workbench": "^1.5",
         "drupal/workbench_access": "^2.0",
         "drush/drush": "^13",
