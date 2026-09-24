@@ -54,7 +54,11 @@ function sabc_preprocess_block(&$variables) {
 }
 
 function sabc_preprocess_page(&$variables) {
-
+  if (isset($variables['page']['sidebar_first']['sabcprimary_sidemenu'])) {
+    // Drupal 11 introduced placeholder rendering for block plugins
+    // Render the side menu before Twig checks whether the side bar is empty
+    $variables['page']['sidebar_first']['sabcprimary_sidemenu']['#create_placeholder'] = FALSE;
+  }
 }
 
 function sabc_form_search_block_form_alter(&$form, $form_state) {
